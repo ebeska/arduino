@@ -1,0 +1,65 @@
+#include <Arduino.h>
+
+#include < servo.h>
+
+#incluude < MPU6050>
+
+MPU6050 ivme_sensor;
+
+int ax,ay,az,gx,gy,gz;
+
+int servoPin = 9;
+
+int hareket;
+
+servo motor;
+
+void setup () {
+
+ 
+
+  motor.attach(servoPin);
+
+ivme_sensor.initalize();
+
+}
+
+void loop() {
+
+    hareket = digitalread (MPU6050)
+
+     if(hareket == HİGH){
+
+       motor.write();
+
+       delay();
+
+       motor.write();
+
+       delay();
+
+}
+
+  else{
+
+      motor.write(180);
+
+}
+
+ivme_sensor.getMotion ({ax}.{ay},{az},{gx},{gy},{gz});
+
+serial.print("İvme x değeri");(Serial.print("\t");Serial.println(ax);
+
+serial.print("İvme y değeri");(Serial.print("\t");Serial.println(ay);
+
+serial.print("İvme z değeri");(Serial.print("\t");Serial.println(az);
+
+serial.print("İvme x değeri");(Serial.print("\t");Serial.println(gx);
+
+serial.print("İvme y değeri");(Serial.print("\t");Serial.println(gy);
+
+serial.print("İvme z değeri");(Serial.print("\t");Serial.println(gz);
+
+Delay(5000);
+
+}
